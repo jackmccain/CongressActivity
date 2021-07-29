@@ -140,6 +140,14 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<5)"]
 
 [[package]]
+name = "tailwindcss"
+version = "0.0.1"
+description = "to use tailwindcss"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "typing-extensions"
 version = "3.10.0.0"
 description = "Backported and Experimental Type Hints for Python 3.5+"
@@ -186,7 +194,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "3634784f49d9f4b0b77d44c79d282c5a1e835d9b343a67eaaa369fd30de0aa50"
+content-hash = "978620b94a5bd19a061ab34c94ccc3c9fc63e0e92757a44537dac7c9ef24f6e5"
 
 [metadata.files]
 certifi = [
@@ -268,6 +276,9 @@ python-dotenv = [
 requests = [
     {file = "requests-2.26.0-py2.py3-none-any.whl", hash = "sha256:6c1246513ecd5ecd4528a0906f910e8f0f9c6b8ec72030dc9fd154dc1a6efd24"},
     {file = "requests-2.26.0.tar.gz", hash = "sha256:b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7"},
+]
+tailwindcss = [
+    {file = "tailwindcss-0.0.1.tar.gz", hash = "sha256:2ba71105662701a522a13367844f7f5e8830456da69f30048291440431f8875b"},
 ]
 typing-extensions = [
     {file = "typing_extensions-3.10.0.0-py2-none-any.whl", hash = "sha256:0ac0f89795dd19de6b97debb0c6af1c70987fd80a2d62d1958f7e56fcc31b497"},

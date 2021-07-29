@@ -3,6 +3,7 @@
 
 <head>
     <title>Congress Activity </title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dist.css')}}">
 </head>
 
 <body style="background-color: rgb(255,196,178); margin: 0px;">
@@ -14,7 +15,7 @@
 
     <ul>
     {% for official in officials %}
-        <li>{{official["first_name"]}} {{official["last_name"]}} missed {{official["missed_votes_pct"]}}% of votes.</li>
+        <li class="text-green-500">{{official["first_name"]}} {{official["last_name"]}} missed {{official["missed_votes_pct"]}}% of votes.</li>
     {% endfor %}
     </ul>
 <p></p>

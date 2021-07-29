@@ -1,0 +1,23 @@
+{
+  "name": "congressactivity",
+  "version": "1.0.0",
+  "description": "How active are your representatives in Congress?",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss-cli@latest build ./CongressActivity/static/src/style.css -o ./CongressActivity/static/css/dist.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackmccain/CongressActivity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackmccain/CongressActivity/issues"
+  },
+  "homepage": "https://github.com/jackmccain/CongressActivity#readme"
+}
