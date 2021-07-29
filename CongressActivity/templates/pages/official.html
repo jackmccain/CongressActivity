@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <ul>
+        {% for official in officials %}
+            <li class="text-lg font-semibold">{{official["first_name"]}} {{official["last_name"]}} missed {{official["missed_votes_pct"]}}% of votes.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
