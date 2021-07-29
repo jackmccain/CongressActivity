@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Congress Activity </title>
+</head>
+
+<body style="background-color: rgb(255,196,178); margin: 0px;">
+
+    <form action="/" method = "GET">
+        <p>Enter a senator's name: <input type = "text" name = "official"></p>
+        <p><input type = "submit" value = "submit" /></p>
+    </form>
+
+    <ul>
+    {% for official in officials %}
+        <li>{{official["first_name"]}} {{official["last_name"]}} missed {{official["missed_votes_pct"]}}% of votes.</li>
+    {% endfor %}
+    </ul>
+<p></p>
+   
+</body>
+
+
+
+</html>
+<script>
+
+</script>
