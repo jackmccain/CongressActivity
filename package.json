@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tailwindcss-cli@latest build ./CongressActivity/static/src/style.css -o ./CongressActivity/static/css/dist.css"
+    "build": "npx tailwindcss build -i ./CongressActivity/static/src/style.css -o ./CongressActivity/static/css/dist.css"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/jackmccain/CongressActivity/issues"
   },
-  "homepage": "https://github.com/jackmccain/CongressActivity#readme"
+  "homepage": "https://github.com/jackmccain/CongressActivity#readme",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
+    "tailwindcss": "^2.2.7"
+  }
 }
