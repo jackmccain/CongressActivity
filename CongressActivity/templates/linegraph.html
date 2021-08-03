@@ -1,0 +1,39 @@
+<div class="shadow-lg rounded-lg overflow-hidden">
+    <canvas class="p-5" id="chartLine"></canvas>
+  </div>
+  
+  <!-- Required chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Chart line -->
+  <script>
+  
+      const labels = [
+          '111th Congress',
+          '112th Congress',
+          '113th Congress',
+          '114th Congress',
+          '115th Congress',
+          '116th Congress',
+      ];
+      const data = {
+          labels: labels,
+          datasets: [{
+              label: 'Absentee Percentage',
+              backgroundColor: 'rgb(21,101,192)',
+              borderColor: 'rgb(21,101,192)',
+              data: [0, 10, 5, 2, 20, 30, 45],
+          }]
+      };
+  
+      const configLineChart = {
+          type: 'line',
+          data,
+          options: {}
+      };
+  
+      var chartLine = new Chart(
+          document.getElementById('chartLine'),
+          configLineChart
+      );
+  </script>

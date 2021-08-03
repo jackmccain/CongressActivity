@@ -1,0 +1,19 @@
+<body class="bg-blue-800"></body>
+
+{% extends 'base.html' %}
+{% block content %}
+
+{% block section %}
+{% include 'search.html' %}
+{% endblock %}
+
+<ul>
+  {% for official in officials %}
+  <li class="text-lg font-semibold">{{official["first_name"]}} {{official["last_name"]}} missed
+    {{official["missed_votes_pct"]}}% of votes.</li>
+  {% endfor %}
+</ul>
+<p></p>
+
+{% endblock %}
+</body>

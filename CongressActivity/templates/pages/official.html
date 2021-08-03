@@ -1,12 +1,51 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends 'base.html' %}
 
-    <ul>
-        {% for official in officials %}
-            <li class="text-lg font-semibold">{{official["first_name"]}} {{official["last_name"]}} missed {{official["missed_votes_pct"]}}% of votes.</li>
-        {% endfor %}
-    </ul>
+<body class="bg-white">
+    {% block content %}
 
+    <div class="grid grid-flow-col grid-cols-3 grid-rows-6 gap-4 max-w-3xl mx-auto flex justify-between mt-5">
+        <div class="col-span-2">
+            {% block senoverview %}
+            {% include 'senoverview.html' %}
+            {% endblock %}
+        </div>
+
+        <!-- <div> -->
+
+        <div class="row-span-2">
+            {% block piechart %}
+            {% include 'doughnut.html' %}
+            {% endblock %}
+        </div>
+
+        <div class="col-span-3 row-span-3">
+            {% block linegraph %}
+            {% include 'linegraph.html' %}
+            {% endblock %}
+        </div>
+        <!-- <div> -->
+
+        <div class="row-span-2 col-span-2">
+            {% block statdisplay %}
+            {% include 'statdisplay.html' %}
+            {% endblock %}
+
+        </div>
+
+       
+
+        <div>
+            {% block senrate %}
+            {% include 'senrate.html' %}
+            {% endblock %}
+        </div>
+
+
+       
+
+
+
+    </div>
+
+    {% endblock %}
 </body>
-</html>
