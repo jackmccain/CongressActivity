@@ -1,13 +1,27 @@
-<div class="mt-56 max-w-md mx-auto">
-    <form action="/official" method = "GET">
-        <form class="w-full max-w-sm mx-auto">
+<div class="mt-56 max-w-md mx-auto " id="app">
+    <form action="/official" method = "GET" id="search-form">
             <div class="flex items-center">
-                <input type="text" name="official" id="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Charles Schumer">
+                <!-- <input type="text" name="official" id="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Charles Schumer"> -->
+                <select name="official" id="officials" required>
+                    <option selected disabled id="default-value"></option>
+                    <option>Charles Schumer</option>
+                    <option>Kirsten Gillaband</option>
+                </select>
                 <button class="bg-white hover:bg-gray-200 text-gray-800 font-normal text-sm py-2 px-7 rounded m-2">
                     Search
                   </button>
             </div>
           </form>
+          <script>
+            var config = {
+                placeholder: "Search a senator...",
+
+                onChange: (value) => {
+                    if (value) {
+                        document.querySelector("#search-form").submit();
+                    }
+                }
+            };
+            let search = new TomSelect('#officials', config);
+        </script>
 </div>
-
-
