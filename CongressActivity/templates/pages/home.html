@@ -3,9 +3,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+<div class="md:mt-40">
 {% block section %}
 {% include 'search.html' %}
 {% endblock %}
+</div>
 
 <ul>
   {% for official in officials %}
@@ -16,4 +22,5 @@
 <p></p>
 
 {% endblock %}
+
 </body>

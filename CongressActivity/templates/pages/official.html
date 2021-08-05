@@ -3,6 +3,11 @@
 <body class="bg-white">
     {% block content %}
 
+    {% block navbar %}
+    {% include 'searchnavbar.html' %}
+    {% endblock %}
+
+
     <div class="grid grid-flow-col grid-cols-3 grid-rows-6 gap-4 max-w-3xl mx-auto flex justify-between mt-5 auto-rows-fr">
         <div class="col-span-2">
             {% block senoverview %}
@@ -48,4 +53,6 @@
     </div>
 
     {% endblock %}
+
+
 </body>
