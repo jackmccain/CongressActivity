@@ -1,10 +1,12 @@
 <div class="sm:flex sm:items-center sm:justify-between">
     <div class="sm:flex sm:space-x-5">
       <div class="flex-shrink-0">
-        <img class="mx-auto h-20 w-20 rounded-md" src="{{detailed_data['image']}}" alt="">
+        <img class="mx-auto h-24 w-20 rounded-md" src="https://theunitedstates.io/images/congress/450x550/{{ official['id'] }}.jpg" alt="">
       </div>
       <div class="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
-        <p class="text-xl font-bold text-gray-900 sm:text-2xl">{{official["first_name"]}} {{official["last_name"]}}</p>
+        <p class="text-xl font-bold text-gray-900 sm:text-2xl">{{official["first_name"]}} {{official["last_name"]}}
+         
+        </p>
         <p class="text-sm font-medium text-gray-600">{{official["title"]}}</p>
         <p class="text-sm font-medium text-gray-600">{{official["state"]}}</p>
       </div>

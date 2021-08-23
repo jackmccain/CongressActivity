@@ -6,7 +6,7 @@
         {% with x="Missed Votes", y=official['missed_votes'] %}
             {% include 'statdisplayindv.html'%}
         {% endwith %}
-        {% with x="Activity Score", y=100-official['missed_votes_pct'], z="%" %}
+        {% with x="Votes Attended", y=100-official['missed_votes_pct'], z="%" %}
             {% include 'statdisplayindv.html'%}
         {% endwith %}
         {% with x="Bills Sponsored", y=detailed_data["roles"][0]["bills_sponsored"] %}

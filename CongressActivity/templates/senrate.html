@@ -1,4 +1,24 @@
-<p class="text-4xl font-bold text-red-400 text-right sm:text-5xl mt-0">
+<p class="text-4xl font-bold text-right sm:text-5xl mt-0" id="vote_pct">
     {{official['missed_votes_pct']}}%
     <p class="text-xs font-medium text-gray-600 text-right "> Absentee Rate <p class="text-xs font-medium text-gray-600 text-right ">(117th Congress) </p></p>
 </p>
+
+
+<script>
+      
+var missed_votes_pct = "{{official['missed_votes_pct']}}"
+
+
+    if (0 < missed_votes_pct < 3) {
+        document.getElementById("vote_pct").classList.add("text-green-400")
+    } else if (missed_votes_pct > 3) {
+        document.getElementById("vote_pct").classList.add("text-yellow-400")
+    }else if (missed_votes_pct > 5) {
+        document.getElementById("vote_pct").classList.add("text-red-400")
+    }  else if (5 < missed_votes_pct < 25) {
+        document.getElementById("vote_pct").classList.add("text-red-600")
+    }  else if (25 < missed_votes_pct < 100) {
+        document.getElementById("vote_pct").classList.add("text-red-900")
+    }
+
+</script>

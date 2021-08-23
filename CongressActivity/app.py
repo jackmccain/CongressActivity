@@ -26,17 +26,16 @@ def get_legislator_data(api_url):
         headers={"X-API-Key": PROPUBLICA_API_KEY},
     ).json()["results"][0]
 
-    if "youtube_account" in data and data["youtube_account"] is not None:
-        twitter = requests.get(f"https://www.youtube.com/user/{data['youtube_account']}")
-        soup = BeautifulSoup(twitter.content)
-        data["image"] = soup.find("meta", property="og:image").attrs["content"]
+    # if "youtube_account" in data and data["youtube_account"] is not None:
+    #     twitter = requests.get(f"https://www.youtube.com/user/{data['youtube_account']}")
+    #     soup = BeautifulSoup(twitter.content)
+    #     data["image"] = soup.find("meta", property="og:image").attrs["content"]
 
     return data
 
 
 
 legislators = CONGRESS_DATA["results"][0]["members"] + SENATE_DATA["results"][0]["members"]
-
 
 @app.route("/")
 def home():
@@ -50,20 +49,41 @@ def official():
     official = request.args.get("official")
     matched_official = list(filter(lambda k: (k["first_name"] + " " + k["last_name"] in official), legislators))
 
+    
+
     if len(matched_official) == 0:
         abort(404)
 
     matched_official = matched_official[0]
     detailed_data = get_legislator_data(matched_official["api_uri"])
-    print(detailed_data)
 
-    print(matched_official)
+
+
+    missed_votes_pct = []
+    congress = []
+
+    for x in sorted(detailed_data['roles'],key=lambda k: k["congress"]):
+        if "missed_votes_pct" not in x:
+            continue
+        missed_votes_pct.append(100 - x["missed_votes_pct"])
+        congress.append(x["congress"] + "th Congress")
+
+    print(detailed_data)
+    
+
 
     return render_template(
         "pages/official.html",
          official=matched_official,
          legislators=legislators,
-         detailed_data=detailed_data
+         detailed_data=detailed_data,
+        missed_votes_pct_overtime=missed_votes_pct,
+        congress_overtime=congress
     )
+
+@app.route("/about")
+def about():
+    return render_template("pages/about.html")
+
 
 app.run(debug=True)

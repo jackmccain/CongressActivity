@@ -8,8 +8,8 @@
     {% endblock %}
 
 
-    <div class="grid grid-flow-col grid-cols-3 grid-rows-6 gap-4 max-w-3xl mx-auto flex justify-between mt-5 auto-rows-fr">
-        <div class="col-span-2">
+    <div class="grid grid-flow-col md:grid-cols-3 md:grid-rows-6 gap-4 max-w-3xl mx-auto flex justify-between mt-5 grid-cols-3">
+        <div class="md:col-span-2 col-span-3">
             {% block senoverview %}
             {% include 'senoverview.html' %}
             {% endblock %}
@@ -17,20 +17,20 @@
 
         <!-- <div> -->
 
-        <div class="row-span-2">
+        <div class="md:row-span-2 md:col-span-1 row-span-3">
             {% block piechart %}
             {% include 'doughnut.html' %}
             {% endblock %}
         </div>
 
-        <div class="col-span-3 row-span-3">
+        <div class="md:col-span-3 md:row-span-3 col-span-3">
             {% block linegraph %}
             {% include 'linegraph.html' %}
             {% endblock %}
         </div>
         <!-- <div> -->
 
-        <div class="row-span-2 col-span-2">
+        <div class="md:row-span-2 md:col-span-2">
             {% block statdisplay %}
             {% include 'statdisplay.html' %}
             {% endblock %}
@@ -46,13 +46,16 @@
         </div>
 
 
+
        
 
 
 
     </div>
 
+    {% block footer %}
+    {% include 'footer.html' %}
     {% endblock %}
-
+    {% endblock %}
 
 </body>
