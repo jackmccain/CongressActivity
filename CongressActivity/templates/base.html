@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html>
 <head>
     <title>Congress Activity </title>
     <link rel="stylesheet" href="{{url_for('static',filename='css/dist.css')}}">
@@ -8,11 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
+<body class="{% block base_classes %}{% endblock %}">
+    {% block navbar %}
+    {% include 'searchnavbar.html' %}
+    {% endblock %}
 
+    <div class="mx-4">
+        <div class="max-w-3xl mx-auto mt-5">
+            {% block content %}
+            {% endblock %}
 
-{% block content %}
-
-{% endblock %}
-
+            {% block footer %}
+            {% include 'footer.html' %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
 
 </html>

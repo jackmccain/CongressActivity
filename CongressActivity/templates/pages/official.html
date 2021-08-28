@@ -1,45 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-{% block navbar %}
-{% include 'searchnavbar.html' %}
-{% endblock %}
-
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto flex justify-between mt-5">
-    <div class="md:col-span-2">
+<div class="md:flex w-full justify-between">
+    <div>
         {% block senoverview %}
         {% include 'senoverview.html' %}
         {% endblock %}
     </div>
-
-    <div>
+    <div class="content-center md:content-left mt-4 md:mt-0">
         {% block senrate %}
         {% include 'senrate.html' %}
         {% endblock %}
     </div>
-
-    <div class="md:row-span-2 md:col-span-1 row-span-3">
+</div>
+<div class="md:grid md:grid-cols-3 md:gap-4 items-stretch mt-8">
+    <div class="">
         {% block piechart %}
         {% include 'doughnut.html' %}
         {% endblock %}
     </div>
-
-    <div class="md:row-span-2 md:col-span-2 col-span-3">
+    <div class="md:col-span-2 mt-8 md:mt-0">
         {% block statdisplay %}
         {% include 'statdisplay.html' %}
         {% endblock %}
     </div>
-
-    <div class="md:col-span-3 md:row-span-3 col-span-3">
-        {% block linegraph %}
-        {% include 'linegraph.html' %}
-        {% endblock %}
-    </div>
 </div>
-
-{% block footer %}
-{% include 'footer.html' %}
-{% endblock %}
+<div class="mt-8">
+    {% block linegraph %}
+    {% include 'linegraph.html' %}
+    {% endblock %}
+</div>
 {% endblock %}

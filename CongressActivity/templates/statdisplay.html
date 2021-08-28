@@ -1,22 +1,20 @@
-<div class="border-2 shadow-sm rounded-lg">
-    <dl class="mt-0 grid grid-cols-2 grid-rows-2 rounded-lg bg-white overflow-hidden shadow-xl divide-x divide-y divide-gray-200 md:grid-cols-3 divide-x ">
-        {% with x="Total Votes", y=official['total_votes'] %}
-            {% include 'statdisplayindv.html'%}
-        {% endwith %}
-        {% with x="Missed Votes", y=official['missed_votes'] %}
-            {% include 'statdisplayindv.html'%}
-        {% endwith %}
-        {% with x="Votes Attended", y=100-official['missed_votes_pct'], z="%" %}
-            {% include 'statdisplayindv.html'%}
-        {% endwith %}
-        {% with x="Bills Sponsored", y=detailed_data["roles"][0]["bills_sponsored"] %}
-            {% include 'statdisplayindv.html'%}
-        {% endwith %}
-        {% with x="Bills Co-Sponsored", y=detailed_data["roles"][0]["bills_cosponsored"] %}
-            {% include 'statdisplayindv.html'%}
-        {% endwith %}
-        {% with x="Votes Against Party", y=official['votes_against_party_pct'], z="%" %}
-            {% include 'statdisplayindv.html'%}
-        {% endwith %}
-    </dl>
-  </div>
+<div class="shadow-lg border rounded-lg grid grid-cols-2 rounded-lg divide-gray-200 md:grid-cols-3 h-full">
+    {% with x="Total Votes", y=official['total_votes'] %}
+        {% include 'statdisplayindv.html'%}
+    {% endwith %}
+    {% with x="Missed Votes", y=official['missed_votes'] %}
+        {% include 'statdisplayindv.html'%}
+    {% endwith %}
+    {% with x="Votes Attended", y=100-official['missed_votes_pct'], z="%" %}
+        {% include 'statdisplayindv.html'%}
+    {% endwith %}
+    {% with x="Bills Sponsored", y=detailed_data["roles"][0]["bills_sponsored"] %}
+        {% include 'statdisplayindv.html'%}
+    {% endwith %}
+    {% with x="Bills Co-Sponsored", y=detailed_data["roles"][0]["bills_cosponsored"] %}
+        {% include 'statdisplayindv.html'%}
+    {% endwith %}
+    {% with x="Votes Against Party", y=official['votes_against_party_pct'], z="%" %}
+        {% include 'statdisplayindv.html'%}
+    {% endwith %}
+</div>

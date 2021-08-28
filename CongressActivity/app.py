@@ -66,10 +66,10 @@ def official():
         if "missed_votes_pct" not in x:
             continue
         missed_votes_pct.append(100 - x["missed_votes_pct"])
-        congress.append(x["congress"] + "th Congress")
+        congress.append(x["congress"] + " Cong.")
 
     print(detailed_data)
-    
+
 
 
     return render_template(

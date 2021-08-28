@@ -1,39 +1,37 @@
 <div class="shadow-lg rounded-lg overflow-hidden border-2">
     <canvas class="p-5" id="chartLine"></canvas>
-  </div>
-  
-  <script>
-    var missed_votes_pct_overtime =  {{ missed_votes_pct_overtime | tojson }};
+</div>
+
+<script>
+    var missed_votes_pct_overtime = {{ missed_votes_pct_overtime | tojson }};
     var congress_overtime = {{ congress_overtime | tojson }};
 </script>
-  <!-- Required chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
-  <!-- Chart line -->
-  <script>
+<!-- Required chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<!-- Chart line -->
+<script>
+    const labels = congress_overtime;
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Percentage of Votes Attended',
+            backgroundColor: 'rgb(21,101,192)',
+            borderColor: 'rgb(21,101,192)',
+            data: missed_votes_pct_overtime,
+        }]
+    };
 
-      const labels = 
-          congress_overtime
-      ;
-      const data = {
-          labels: labels,
-          datasets: [{
-              label: 'Percentage of Votes Attended',
-              backgroundColor: 'rgb(21,101,192)',
-              borderColor: 'rgb(21,101,192)',
-              data: missed_votes_pct_overtime,
-          }]
-      };
-  
-      const configLineChart = {
-          type: 'line',
-          data,
-          options: {}
-      };
-  
-      var chartLine = new Chart(
-          document.getElementById('chartLine'),
-          configLineChart
-      );
-  </script>
+    const configLineChart = {
+        type: 'line',
+        data,
+        options: {
+            responsive: true
+        }
+    };
+
+    var chartLine = new Chart(
+        document.getElementById('chartLine'),
+        configLineChart
+    );
+</script>

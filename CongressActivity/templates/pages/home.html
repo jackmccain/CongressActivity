@@ -1,14 +1,15 @@
-<body class="bg-blue-900 max-h-screen">
-
 {% extends 'base.html' %}
-{% block content %}
 
+{% block base_classes %}
+bg-blue-900
+{% endblock %}
 
-{% block homepageheader %}
+{% block navbar %}
 {% include 'homepageheader.html' %}
 {% endblock %}
 
-<div class="">
+{% block content %}
+<div>
 {% block section %}
 {% include 'search.html' %}
 {% endblock %}
@@ -21,9 +22,7 @@
   {% endfor %}
 </ul>
 <p></p>
-
-
-
 {% endblock %}
 
-</body>
+{% block footer %}
+{% endblock %}
