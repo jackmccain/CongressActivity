@@ -68,10 +68,6 @@ def official():
         missed_votes_pct.append(100 - x["missed_votes_pct"])
         congress.append(x["congress"] + " Cong.")
 
-    print(detailed_data)
-
-
-
     return render_template(
         "pages/official.html",
          official=matched_official,
@@ -85,5 +81,5 @@ def official():
 def about():
     return render_template("pages/about.html")
 
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
